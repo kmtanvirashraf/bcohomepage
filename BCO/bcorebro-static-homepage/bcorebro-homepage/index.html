@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BCÖ – Bangladeshi Community in Örebro. Gemenskap, kultur och aktiviteter.">
+  <meta name="theme-color" content="#116149">
+  <title>BCÖ | Bangladeshi Community in Örebro</title>
+  <style>
+    :root {
+      --green: #116149;
+      --green-dark: #0b4535;
+      --red: #d62839;
+      --cream: #f7f7f0;
+      --ink: #17231f;
+      --muted: #5b6a64;
+      --white: #fff;
+      --line: #e0e7e2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    header { background: var(--white); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .mark {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      border-radius: 50%; background: var(--green); color: white;
+      font-weight: 800; letter-spacing: -1px; position: relative;
+    }
+    .mark::after { content: ""; width: 12px; height: 12px; background: var(--red); border-radius: 50%; position: absolute; top: 9px; right: 7px; border: 2px solid var(--green); }
+    .brand strong { display: block; font-size: 1.05rem; line-height: 1.25; }
+    .brand small { display: block; color: var(--muted); font-size: .78rem; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { text-decoration: none; font-size: .94rem; font-weight: 650; }
+    nav a:hover, nav a:focus { color: var(--green); text-decoration: underline; text-underline-offset: 5px; }
+    .hero { padding: 82px 0 76px; background: linear-gradient(120deg, #e7f2eb, #f7f7f0 65%); }
+    .hero-grid { display: grid; grid-template-columns: 1.4fr .8fr; align-items: center; gap: 52px; }
+    .eyebrow { color: var(--green); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: .78rem; }
+    h1 { margin: 12px 0 18px; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.04; letter-spacing: -.045em; max-width: 760px; }
+    h1 span { color: var(--green); }
+    .intro { max-width: 620px; color: #43544c; font-size: 1.12rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; text-decoration: none; font-weight: 750; border: 2px solid var(--green); }
+    .btn.primary { background: var(--green); color: white; }
+    .btn.secondary { color: var(--green); background: transparent; }
+    .btn:hover { transform: translateY(-1px); }
+    .flag-card { background: white; border: 1px solid var(--line); border-radius: 24px; padding: 25px; box-shadow: 0 18px 45px #143d2b12; }
+    .flag { aspect-ratio: 5 / 3; width: 100%; background: #006a4e; border-radius: 12px; display: grid; place-items: center; }
+    .flag::before { content: ""; width: 31%; aspect-ratio: 1; border-radius: 50%; background: #f42a41; transform: translateX(-10%); }
+    .flag-card p { margin: 18px 0 0; color: var(--muted); font-size: .92rem; }
+    section { padding: 66px 0; }
+    .section-head { max-width: 680px; margin-bottom: 28px; }
+    h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.2; margin: 0 0 12px; letter-spacing: -.025em; }
+    .section-head p, .card p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .card .icon { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: #e8f3ed; color: var(--green); font-size: 1.3rem; margin-bottom: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    .notice { background: var(--green-dark); color: white; border-radius: 20px; padding: 34px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .notice p { color: #d9e8df; margin: 8px 0 0; max-width: 600px; }
+    .notice .btn { border-color: white; color: var(--green-dark); background: white; flex-shrink: 0; }
+    footer { background: #102d24; color: white; padding: 28px 0; }
+    .foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer p { margin: 0; color: #d2e0d8; font-size: .9rem; }
+    footer a { color: white; }
+    .placeholder { font-size: .82rem; color: #f2d9a7; margin-top: 10px; }
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 12px; }
+      nav { gap: 14px; }
+      .hero { padding: 54px 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .flag-card { max-width: 400px; }
+      .cards { grid-template-columns: 1fr; }
+      section { padding: 48px 0; }
+      .notice { align-items: flex-start; flex-direction: column; padding: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="BCÖ startsida">
+        <span class="mark" aria-hidden="true">BCÖ</span>
+        <span><strong>BCÖ</strong><small>Bangladeshi Community in Örebro</small></span>
+      </a>
+      <nav aria-label="Huvudmeny">
+        <a href="#about">Om oss</a>
+        <a href="#activities">Gemenskap</a>
+        <a href="#events">Aktiviteter</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Gemenskap · Kultur · Samhörighet</div>
+          <h1>Vi bygger gemenskap.<br><span>Tillsammans.</span></h1>
+          <p class="intro">Välkommen till BCÖ – Bangladeshi Community in Örebro. En mötesplats för människor, kultur och gemenskap i Örebro.</p>
+          <div class="actions">
+            <a class="btn primary" href="#about">Läs om BCÖ</a>
+            <a class="btn secondary" href="#contact">Kontakta oss</a>
+          </div>
+        </div>
+        <aside class="flag-card" aria-label="Bangladeshs flagga">
+          <div class="flag" role="img" aria-label="Illustration av Bangladeshs flagga"></div>
+          <p>Med stolthet för vårt ursprung och med gemenskap i vårt lokala samhälle.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Om oss</div>
+          <h2>En gemenskap med plats för alla</h2>
+          <p>BCÖ vill skapa möjligheter för människor med bangladeshisk bakgrund och vänner av Bangladesh att mötas, lära känna varandra och delta i gemensamma aktiviteter.</p>
+        </div>
+        <div class="cards" id="activities">
+          <article class="card">
+            <div class="icon" aria-hidden="true">♡</div>
+            <h3>Gemenskap</h3>
+            <p>Vi vill stärka kontakten mellan familjer, vänner och generationer i vårt lokala samhälle.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">✦</div>
+            <h3>Kultur och tradition</h3>
+            <p>Vi vill dela och uppmärksamma bangladeshisk kultur, språk, mat och traditioner.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">◎</div>
+            <h3>Aktiviteter och möten</h3>
+            <p>Här kommer information om kommande träffar, firanden och andra aktiviteter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="notice">
+          <div>
+            <h2>Kommande aktiviteter</h2>
+            <p>Information om kommande evenemang och nyheter publiceras här. Håll utkik efter uppdateringar från BCÖ.</p>
+            <p class="placeholder">Exempeltext – byt ut mot ett riktigt evenemang när det är bestämt.</p>
+          </div>
+          <a class="btn" href="#contact">Håll kontakten</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Kontakt</div>
+          <h2>Vill du komma i kontakt med BCÖ?</h2>
+          <p>Vi välkomnar frågor, idéer och förslag på aktiviteter. Kontakta föreningen via e-post.</p>
+        </div>
+        <!-- Replace the placeholder below with your real BCÖ email address before publishing. -->
+        <a class="btn primary" href="mailto:info@bcorebro.se">info@bcorebro.se</a>
+        <p class="placeholder" style="color: var(--muted);">Kontrollera att e-postadressen är skapad innan du publicerar sidan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <p>© <span id="year">2026</span> BCÖ – Bangladeshi Community in Örebro</p>
+      <p>Gemenskap med rötter i Bangladesh och en framtid tillsammans i Örebro.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
